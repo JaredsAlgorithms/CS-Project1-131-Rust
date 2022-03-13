@@ -11,6 +11,8 @@ use std::{
 };
 
 fn lines_from_file(filename: impl AsRef<Path>) -> Vec<String> {
+    // Read in a file from a given path and give a vector of strings
+
     let file = File::open(filename).expect("no such file");
     let buffer = BufReader::new(file);
 
@@ -21,18 +23,13 @@ fn lines_from_file(filename: impl AsRef<Path>) -> Vec<String> {
 }
 
 fn main() {
-    let _foo = GroceryItem {
-        name: "Hello".to_string(),
-        quantity: 100,
-        unit_price: 10.00,
-        is_taxable: false,
-    };
 
-    let mut _invent = GroceryInventory {
+    let mut inventory = GroceryInventory {
         inventory: Vec::new(),
         tax_rate: 0.075,
     };
-    let lines = lines_from_file("inputs/shipment.txt");
+    let lines = lines_from_file("../inputs/shipment.txt");
+
     for line in lines {
         let mut split = line.split_whitespace();
         let tuple = (
@@ -48,7 +45,7 @@ fn main() {
             unit_price,
             is_taxable,
         };
-        _invent.add_item(_another);
+        inventory.add_item(_another);
     }
-    println!("The size of the inventory is {}", _invent.size());
+    println!("The size of the inventory is {}", inventory.size());
 }

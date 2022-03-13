@@ -7,13 +7,3 @@ pub struct GroceryItem {
     pub is_taxable: bool,
 }
 
-impl Iterator for GroceryItem {
-    type Item = f32;
-
-    fn sum<S>(self) -> S
-    where
-        S: Sum<Self::Item>,
-    {
-        S::sum(iter::once(self.unit_price * self.quantity))
-    }
-}
