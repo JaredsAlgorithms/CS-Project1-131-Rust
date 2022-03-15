@@ -41,7 +41,7 @@ impl GroceryInventory {
         summation
 
     }
-    //pub fn total_revenue(&mut self) -> &f32 {
-        //&mut self.tax_revenue() + &mut self.unit_revenue()
-    //}
+    pub fn total_revenue(&self) -> f32 {
+        self.unit_revenue() + self.tax_revenue()
+    }
 }

@@ -51,4 +51,7 @@ fn main() {
     assert_eq!(inventory.size(), 166);
     assert_eq!(inventory.tax_revenue(), 11176.954);
     assert_eq!(inventory.unit_revenue(), 1835852.4);
+
+    assert_eq!(inventory.total_revenue(), 1847029.4);
+
 }
