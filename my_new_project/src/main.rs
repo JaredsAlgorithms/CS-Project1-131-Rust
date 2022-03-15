@@ -47,5 +47,8 @@ fn main() {
         };
         inventory.add_item(_another);
     }
-    println!("The size of the inventory is {}", inventory.size());
+
+    assert_eq!(inventory.size(), 166);
+    assert_eq!(inventory.tax_revenue(), 11176.954);
+    assert_eq!(inventory.unit_revenue(), 1835852.4);
 }
